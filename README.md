@@ -4,7 +4,7 @@ This repository contains all the operational and user documentation for running 
 
 ## Getting Started
 
-We have the [Open Data Hub](https://opendatahub.io/) applications deployed and running in a MOC ([Mass Open Cloud](https://massopen.cloud/)) cluster. All user documentation such as the login process for each of the applications deployed can be found [here](https://github.com/operate-first/odh-moc-support/docs/user-docs).
+We have the [Open Data Hub](https://opendatahub.io/) applications deployed and running in a MOC ([Mass Open Cloud](https://massopen.cloud/)) cluster. All user documentation such as the login process for each of the applications deployed can be found [here](https://github.com/operate-first/odh-moc-support/tree/main/docs/user-docs).
 
 ## End User Support
 
