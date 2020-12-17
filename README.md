@@ -20,14 +20,14 @@ https://odh-dashboard-opf-dashboard.apps.cnv.massopen.cloud/
 | Airflow                 | ❌ (Not deployed) |                                                                                    |
 | Argo                    | ✔️                | None (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/39))   |
 | Grafana                 | ✔️                | Custom (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/37)) |
-| Hue                     | ❌ (Stabilizing)  | Custom (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/47)) |
+| Hue                     | ✔️                | Custom (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/47)) |
 | JupyterHub              | ✔️                | Login via OpenShift                                                                |
-| Kafka                   | ❌ (Not deployed) |                                                                                    |
+| Kafka                   | ✔️ (Stabilizing)  |                                                                                    |
 | ODH Dashboard           | ✔️                | None                                                                               |
 | Prometheus              | ✔️                | None                                                                               |
 | Seldon                  | ❌ (Not deployed) |                                                                                    |
 | Spark                   | ✔️                | None                                                                               |
-| Spark SQL Thrift Server | ❌ (Stabilizing)  | None                                                                               |
+| Spark SQL Thrift Server | ✔️                | None                                                                               |
 | Superset                | ✔️                | Custom (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/48)) |
 
 ### Authenticate via OpenShift
