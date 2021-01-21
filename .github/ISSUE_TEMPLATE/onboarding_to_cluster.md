@@ -33,4 +33,4 @@ Select all that apply:
 
 ---
 
-If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs/onboarding_to_cluster.md](../../docs/onboarding_to_cluster.md) guide.
+If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs/onboarding_to_cluster.md](https://github.com/operate-first/support/blob/main/docs/onboarding_to_cluster.md) guide.
