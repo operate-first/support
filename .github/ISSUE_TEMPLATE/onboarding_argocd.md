@@ -24,7 +24,7 @@ Select all that apply:
    Choose an environment from [this list](https://github.com/operate-first/apps/tree/master/cluster-scope/overlays)
 
 3. **Managed namespaces**:
-   The target namespaces that should be managed by ArgoCD. Preferably using [a single (team name) prefix](https://github.com/operate-first/argocd-apps/blob/main/docs/onboard_team_to_argocd.md#additional-notes).
+   The target namespaces that should be managed by ArgoCD. Preferably using [a single (team name) prefix](https://github.com/operate-first/support/blob/main/docs/onboarding_to_argocd.md#additional-notes).
 
 #### Deploying a new application:
 
@@ -45,4 +45,4 @@ Select all that apply:
 
 ---
 
-If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs/onboarding_team_to_argo_cd.md](https://github.com/operate-first/support/blob/main/docs/onboarding_argocd.md) and/or the [docs/add_application.md](https://github.com/operate-first/argocd-apps/blob/main/docs/add_application.md) guides.
+If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs/onboarding_team_to_argo_cd.md](https://github.com/operate-first/support/blob/main/docs/onboarding_to_argocd.md) and/or the [docs/add_application.md](https://github.com/operate-first/argocd-apps/blob/main/docs/add_application.md) guides.
