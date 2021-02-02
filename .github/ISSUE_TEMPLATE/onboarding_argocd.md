@@ -1,6 +1,6 @@
 ---
 name: Onboard to Continuous Deployment
-about: Requesting application to be automatically deployed via ArgoCD to any managed OpenShift cluster
+about: Request a new ArgoCD access, project, application, or add a new user to an existing ArgoCD Project
 title: ""
 labels: onboarding
 assignees: ""
@@ -12,6 +12,7 @@ Select all that apply:
 
 - [ ] Create a new ArgoCD project for existing team
 - [ ] Enlist an application to be deployed automatically via ArgoCD
+- [ ] Add a new user to an ArgoCD Project
 
 ### Questionnaire
 
@@ -42,6 +43,19 @@ Select all that apply:
 
 5. **Target namespace for the application**:
    Please specify an existing namespace in the target cluster which is owned by your team. If you want a new namespace to be created, please file an issue via the [Onboarding to a cluster](https://github.com/operate-first/support/issues/new/choose) template.
+
+#### Add a new user to an ArgoCD Project:
+
+Please note that we use OCP Groups to grant access to ArgoCD projects, this means that this user will be added to your team's OCP group on MOC, and thus have the same permissions as all other members of this group. As such we require an existing member of this group to vouch for you.
+
+1. **User name**
+   Please specify your MOC OCP User Name. E.g. (john at gmail.com)
+
+2. **Team name**
+   Please specify your team Name.
+
+3. **ArgoCD Project**
+   Please specify the ArgoCD project this user should be added to.
 
 ---
 
