@@ -1,16 +1,19 @@
-# Open Data Hub on MOC
+# Operate First on MOC
 
-This repository contains all the operational and user documentation for running the Open Data Hub in MOC.
+This repository contains all the operational and user documentation for running the Operate First applications in MOC.
 
 ## Getting Started
 
-We have [Open Data Hub](https://opendatahub.io/) applications deployed and running in a MOC ([Mass Open Cloud](https://massopen.cloud/)) cluster.
+We have Operate First applications deployed and running in a MOC ([Mass Open Cloud](https://massopen.cloud/)) cluster using the [Open Data Hub](https://opendatahub.io/) Operator.
 
-The ODH homepage on MOC can be found at [ODH Dashboard](https://odh-dashboard-opf-dashboard.apps.cnv.massopen.cloud/). From there you can access any of the provided application:
+You can find detailed information for the deployed apps on the Operate-First website: [operate-first.cloud](https://www.operate-first.cloud/)
+
+For Open Data Hub specific applications, the ODH homepage on MOC can be found at [ODH Dashboard](https://odh-dashboard-opf-dashboard.apps.cnv.massopen.cloud/). <br>
+From there you can access any of the provided applications:
 
 https://odh-dashboard-opf-dashboard.apps.cnv.massopen.cloud/
 
-![ODh Dashboard](docs/assets/images/odh-dashboard.png)
+[![ODh Dashboard](docs/assets/images/odh-dashboard.png)](https://odh-dashboard-opf-dashboard.apps.cnv.massopen.cloud/)
 
 ## Component status
 
@@ -29,6 +32,8 @@ https://odh-dashboard-opf-dashboard.apps.cnv.massopen.cloud/
 | Spark                   | ✔️                | None                                                                               |
 | Spark SQL Thrift Server | ✔️                | None                                                                               |
 | Superset                | ✔️                | user:`generic_user` pass:`redhat` (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/48)) |
+| Kubeflow Dashboard      | ✔️                | None                                                                               |
+| Kubeflow Pipelines      | ✔️                | None                                                                               |
 
 ### Authenticate via OpenShift
 
