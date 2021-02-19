@@ -53,5 +53,5 @@ If you have any problems, questions and feature requests please report them by o
 
 ## Community
 
-- Website: https://operate-first.github.io/operate-first/
+- Website: https://www.operate-first.cloud/
 - Google Chat Room: https://chat.google.com/room/AAAAAYpDdc8
