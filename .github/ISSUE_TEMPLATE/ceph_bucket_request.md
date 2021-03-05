@@ -27,4 +27,4 @@ assignees: ""
 
 ---
 
-If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs/user_profiles.md](https://github.com/operate-first/support/blob/main/docs/user_profiles.md) guide.
+If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs/claiming_object_store.md](https://github.com/operate-first/support/blob/main/docs/claiming_object_store.md) guide.
