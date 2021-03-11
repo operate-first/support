@@ -38,7 +38,7 @@ For easier [onboard to ArgoCD](https://github.com/operate-first/argocd-apps/blob
 Please run:
 
 ```sh
-bash hack/onboarding.sh NAMESPACE_NAME OWNER_TEAM OPTIONAL_PROJECT_DESCRIPTION
+bash scripts/onboarding.sh NAMESPACE_NAME OWNER_TEAM OPTIONAL_PROJECT_DESCRIPTION
 ```
 
 This script will create
