@@ -14,13 +14,13 @@ metadata:
   name: CLAIM_NAME # Must be unique: you can't name it the same as any of your secrets or configmap. More details below
 spec:
   generateBucketName: CLAIM_NAME-
-  storageClassName: ocs-storagecluster-ceph-rgw
+  storageClassName: openshift-storage.noobaa.io
   additionalConfig:
     maxObjects: "1000"
     maxSize: "2G"
 ```
 
-> Note: Users are required to use the `ocs-storagecluster-ceph-rgw` storage class in the MOC deployment. Otherwise the claim does not work. The storage class may differ for other clusters.
+You can use `bucketName` property instead of a `generateBucketName` if you wish to set a fixed bucket name. Please be advised that a bucket name must be remain unique in the whole cluster, therefore we would prefer if users either used unique prefixes for the bucket names or refrained from using `bucketName` property (use the `generateBucketName` instead please).
 
 Once deployed and bound, the `ObjectBucketClaim` resource will be updated. Additionally a new `Secret` and a `ConfigMap` are created in the same namespace. **Both the secret as well as the configmap use the same name as the claim resource. Please make sure you don't overwrite any of your current secrets/configmaps.**
 
@@ -57,6 +57,11 @@ spec:
         - secretRef:
           name: CLAIM_NAME
 ```
+
+## External access
+
+Accessing S3 bucket from outside of the cluster is possible via `https://s3-openshift-storage.apps.zero.massopen.cloud/` route.
+
 
 ## Resources and links
 
