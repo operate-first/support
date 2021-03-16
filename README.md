@@ -23,7 +23,7 @@ https://odh-dashboard-opf-dashboard.apps.zero.massopen.cloud/
 | Airflow                 | ❌ (Not deployed) |                                                                                    |
 | Argo                    | ✔️                | None (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/39))   |
 | Grafana                 | ✔️                | Custom (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/37)) |
-| Hue                     | ✔️                | user:`generic_user` pass:`redhat` (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/47)) |
+| Hue                     | ✔️                | user:`generic_user` pass:`operatefirst` (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/47)) |
 | JupyterHub              | ✔️                | Login via OpenShift                                                                |
 | Kafka                   | ✔️ (Stabilizing)  |                                                                                    |
 | ODH Dashboard           | ✔️                | None                                                                               |
@@ -31,7 +31,7 @@ https://odh-dashboard-opf-dashboard.apps.zero.massopen.cloud/
 | Seldon                  | ❌ (Not deployed) |                                                                                    |
 | Spark                   | ✔️                | None                                                                               |
 | Spark SQL Thrift Server | ✔️                | None                                                                               |
-| Superset                | ✔️                | user:`generic_user` pass:`redhat` (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/48)) |
+| Superset                | ✔️                | user:`generic_user` pass:`operatefirst` (Login via OpenShift [WIP](https://github.com/operate-first/odh/issues/48)) |
 | Kubeflow Dashboard      | ✔️                | None                                                                               |
 | Kubeflow Pipelines      | ✔️                | None                                                                               |
 
