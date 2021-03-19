@@ -15,7 +15,6 @@ reviewers:
   - martinpovolny
   - larsks
   - ipolonsk
-  - naved001
 
 labels:
   - sig/documentation
