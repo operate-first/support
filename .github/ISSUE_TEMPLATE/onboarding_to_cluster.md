@@ -8,36 +8,91 @@ assignees: ""
 
 ### Questionnaire
 
-1. **Team name**:
+1. **Target cluster**:
 
-    Your team name can be any name that satisfies [RFC 1123][1]. We will use this name to create an OCP `group` for you, and your team members. If you are only requesting access for yourself, and you do not have a team, you will still need to pick a team name.
+    <!--
+    Please select a cluster from the list at
+    https://github.com/operate-first/apps/tree/master/cluster-scope/overlays/moc#available-clusters
+    -->
 
-2. **Desired namespaces**:
+    TARGET CLUSTER:
 
-    Please provide the names of the `namespaces` you would like created. Names should satisfy [RFC 1123][1]. Please prefix the names with a suitable prefix for your team. We recommend using your team name (as chosen above) if it's already short, or an abbreviation.
+2. **Team name**:
 
-3. **Users needing access**:
+    <!--
+    Your team name should be a short identifier consisting of lower
+    case letters, numbers, and dashes (technically, anything thing
+    satisfies [RFC 1123][1]). For example, `widget-research` is a
+    valid team name, but `Widget Research` is not, because it contains
+    whitespace.
 
-    Please list all users' OCP `username` that require access to the cluster in question.
+    We will use this name to create an OpenShift `group` for you and
+    your team members.
 
-    Note that if you are looking for access to the MOC `zero` cluster, you will first need to log in to the [console][5] using SSO (any Gmail account will work). Doing so will create your user. Your `username` will be the e-mail address you use. Please provide us this value. If this is sensitive, then please reach out to an Operate-First team member and directly message them your username. All this information is encrypted and stored in git.
+    You need to pick a "team name" whether or not you are requesting
+    access for a group of people or an individual. We recommend that
+    you do not use your individual name as a team name.
 
-4. **Target cluster**:
+    [1]: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-label-names
+    -->
 
-    Please pick a cluster from [this][5] list.
+    TEAM NAME:
 
-5. **Team or maintainer owned GPG key fingerprint along with a keyserver** (OPTIONAL):
+3. **Desired project names**:
 
-    We store all OCP `groups` in git. Sometimes this info can be considered confidential, for example if the usernames in a `group` are e-mail addresses. To keep this information secure, these manifests are stored as [SOPS][6] GPG encrypted files. [Here][7] is an example of such a file. Your team will also have a similar OCP `group` file in that repo. If you or your team would like to be able to decrypt your team's encrypted OCP `group` then you can provide a GPG key that we could also include as part of the encryption procedure. If you already have such a key prepared, please provide it here. For example: `0508677DD04952D06A943D5B4DC4116D360E3276` available from keys.gnupg.net
+    <!--
+    Resources in OpenShift are contained in "namespaces" (also called
+    "projects"). Unless you request otherwise, we will create a single
+    project for you with the same name as your selected team name.
+
+    If you need additional namespaces, or want a project name that
+    differs from your team name, please indicate that here. Project
+    names have the same requirements as team names.
+    -->
+
+    PROJECT NAMES:
+
+4. **Users needing access**:
+
+    <!--
+    Please list all users that will require access to the selected cluster.
+
+    Your OpenShift username is the email address associated with the
+    Google account you use to log in to the cluster. If you do not
+    wish to list email addresses in this issue (which is public), you
+    may reach out directly to an operate-first team member to provide
+    that information.
+    -->
+
+    LIST OF USERS:
+
+5. **GPG Key** (OPTIONAL)
+
+    <!--
+    We store all cluster configuration information in a public git
+    repository. Some information, such as email addresses, can be
+    considered sensitive.  To keep this information secure, we store
+    this information in GPG encrypted files.
+
+    The information about the team members in your `group` will be
+    stored in such a file in our configuration repository.  If you or
+    your team would like to be able to decrypt your team's encrypted
+    OpenShift `group` file then you can provide a GPG key that we will
+    include as part of the encryption procedure.
+
+    If you have a GPG key, please provide us with the key fingerprint
+    and the name of a keyserver on which it is published.  For
+    example:
+
+      GPG KEY FINGERPRINT: 0508677DD04952D06A943D5B4DC4116D360E3276
+      KEYSERVER: keys.gnupg.net
+    -->
+
+    GPG KEY FINGERPRINT:
+    KEYSERVER:
 
 ---
 
-If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs/onboarding_to_cluster.md][4] guide.
+If you don't want to wait for the maintainers to notice this issue, you can make the changes yourself by submitting a pull request against the configuration repository. Please follow the [docs/onboarding_to_cluster.md][2] guide.
 
-[1]:https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-label-names
-[2]:https://github.com/operate-first/apps/tree/master/cluster-scope/base/namespaces/
-[3]:https://github.com/operate-first/apps/tree/master/cluster-scope/overlays
-[4]:https://github.com/operate-first/support/blob/main/docs/onboarding_to_cluster.md
-[5]:https://github.com/operate-first/apps/tree/master/cluster-scope/overlays/moc#available-clusters
-[6]:https://github.com/mozilla/sops
-[7]:https://github.com/operate-first/apps/blob/master/cluster-scope/overlays/moc/common/groups/thoth.enc.yaml
+[2]:https://github.com/operate-first/support/blob/main/docs/onboarding_to_cluster.md
