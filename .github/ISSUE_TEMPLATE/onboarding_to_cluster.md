@@ -6,9 +6,18 @@ labels: onboarding
 assignees: ""
 ---
 
-### Questionnaire
+## Questionnaire
 
-1. **Target cluster**:
+1. **Project description**:
+
+   <!--
+   Please provide a brief description of your project and any
+   particular resource requirements of which you're aware.
+   -->
+
+   PROJECT DESCRIPTION:
+
+2. **Target cluster**:
 
     <!--
     Please select a cluster from the list at
@@ -17,7 +26,7 @@ assignees: ""
 
     TARGET CLUSTER:
 
-2. **Team name**:
+3. **Team name**:
 
     <!--
     Your team name should be a short identifier consisting of lower
@@ -38,7 +47,7 @@ assignees: ""
 
     TEAM NAME:
 
-3. **Desired project names**:
+4. **Desired project names**:
 
     <!--
     Resources in OpenShift are contained in "namespaces" (also called
@@ -52,7 +61,7 @@ assignees: ""
 
     PROJECT NAMES:
 
-4. **Users needing access**:
+5. **Users needing access**:
 
     <!--
     Please list all users that will require access to the selected cluster.
@@ -66,7 +75,7 @@ assignees: ""
 
     LIST OF USERS:
 
-5. **GPG Key** (OPTIONAL)
+6. **GPG Key** (OPTIONAL)
 
     <!--
     We store all cluster configuration information in a public git
