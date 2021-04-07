@@ -75,7 +75,25 @@ assignees: ""
 
     LIST OF USERS:
 
-6. **GPG Key** (OPTIONAL)
+6. ** Namespace Quota **
+
+    <!--
+    Please pick the resource tier you need for your project from
+    this list: https://github.com/operate-first/support/blob/main/docs/quotas.md
+
+    If none of the tiers are applicable, please write "CUSTOM" and
+    specify your requirements (CPU/Memory/Storage).
+
+    Please don't be afraid to choose a smaller tier first. If you
+    require a higher quota, we can easily upgrade your tier. Quotas
+    are here to prevent over-reservation (resource requests) not
+    actual usage.
+
+    -->
+
+    QUOTA:
+
+7. **GPG Key** (OPTIONAL)
 
     <!--
     We store all cluster configuration information in a public git
