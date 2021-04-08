@@ -8,10 +8,9 @@ We have Operate First applications deployed and running in a MOC ([Mass Open Clo
 
 You can find detailed information for the deployed apps on the Operate-First website: [operate-first.cloud](https://www.operate-first.cloud/)
 
-For Open Data Hub specific applications, the ODH homepage on MOC can be found at [ODH Dashboard](https://odh.operate-first.cloud/). <br>
-From there you can access any of the provided applications:
+For Open Data Hub specific applications, the ODH homepage on MOC can be found at ODH Dashboard: [odh.operate-first.cloud](https://odh.operate-first.cloud/). <br>
 
-https://odh.operate-first.cloud/
+From there you can access any of the provided applications:
 
 [![ODh Dashboard](docs/assets/images/odh-dashboard.png)](https://odh.operate-first.cloud/)
 
@@ -54,4 +53,4 @@ If you have any problems, questions and feature requests please report them by o
 ## Community
 
 - Website: https://www.operate-first.cloud/
-- Google Chat Room: https://chat.google.com/room/AAAAAYpDdc8
+- Slack Chat Room: https://join.slack.com/t/operatefirst/shared_invite/zt-o2gn4wn8-O39g7sthTAuPCvaCNRnLww
