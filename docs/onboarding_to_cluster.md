@@ -54,7 +54,16 @@ cd cluster-scope/overlays/TARGET_CLUSTER
 kustomize edit add resource ../../base/namespaces/$NAMESPACE
 ```
 
-## Adding users
+### Authenticate via OpenShift
+Each supported component provides a login button which states "Login via OpenShift" or "Sign in with OpenShift". This will lead the user to an authentication provider selection screen:
+
+![Auth provider selection screen in OpenShift](assets/images/openshift-login.png)
+
+Please select `moc-sso` provider. Then choose the final account provider that fits you the most:
+
+![MOC auth provider selection screen](assets/images/moc-login.png)
+
+## Giving Users Rbac Permissions
 
 The following steps enable users to access designated cluster/namespaces. This simply consists of adding such users to the appropriate OpenShift groups with access to those cluster/namespaces. Depending on the cluster, these groups may need to be encrypted, or may be stored as plaintext, each scenario requires a different set of steps.
 
