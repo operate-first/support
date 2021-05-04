@@ -15,11 +15,15 @@ The following steps should be completed to fully onboard and enable a team to us
 ## Pre-requisites
 Team requesting ArgoCD access must have been onboarded to the cluster. See [here][5].
 
-Please fork/clone the [operate-first/apps][6] repository. **During this whole setup, we'll be working within this repository.**
+Please fork/clone the [operate-first/apps][6] and [operate-first/argocd-apps][18] repositories.
+
+**During this whole setup, we'll be working within these repositories.**
 
 ## OpenShift Group
 
 To add multi-tenancy support, we require the team to have an OpenShift group on the MOC cluster on which our ArgoCD instance resides. This OpenShift group should include all the people belonging to the team that will need write-level access to applications belonging to the team's ArgoCD Project (explained later). The team being onboarded to ArgoCD should have had a group already created during cluster onboarding, as described [here][5].
+
+> Note: We use teams/project names interchangeably throughout this doc as all ArgoCD projects (for end-users) are named after their team names picked during the cluster onboarding process.
 
 ## Create project directories for this repository
 Pick an environment/cluster this team will be deploying to and create a folder [here][8] under that environment/cluster accordingly, we'll refer to this folder name as `<team-name>` and will re-use this value later.
@@ -36,10 +40,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: <team-name>
+  labels:
+    project-template: global
 spec:
   destinations:
     - namespace: '<team-namespace-prefix>-*'
-      server: `<cluster-name>`
+      server: '<cluster-name>'
   sourceRepos:
     - '*'
   roles:
@@ -68,7 +74,7 @@ Some notes:
 * Ensure that the `spec.destinations` field contains a prefix for the team's namespaces. The team will be required to prefix their namespaces with this attribute if they want ArgoCD to be able to deploy to them, any other namespaces not following the prefix will need to be added manually under this field. See additional notes for more details.
 * Ensure `operate-first` is added into the `roles.groups` for each role. This allows the operate-first team to help diagnose issues.
 * `namespaceResourceWhitelist` generally contains the list of resources a project `admin` has access to. The general idea is that a team should be able to deploy via ArgoCD what they can deploy using `oc apply`. See other projects for a list of such resources.
-* `<cluster-name>` can be determined by searching the `metadata.name` in the secrets found [here][10]. Pick the one that corresponds to the cluster this team will deploy to. Note if the team would like to deploy to multiple clusters, then simply add more items to ` spec.destinations` accordingly.
+* `<cluster-name>` should be one of `zero` or `infra`.
 
 Ensure that the argocd project is included in the `kustomization.yaml` [here][11].
 
@@ -78,6 +84,11 @@ By default all users should be able to see the [ArgoCD console][12]. To be able 
 ## Give team read access to non-app ArgoCD resources
 
 Append this [list][14] and give the team the `standard-user` role. The group will correspond to the team's OCP group.
+For example if onboarding the team `someteam` you would append the following to this file:
+
+```yaml
+g, someteam, role:standard-user
+```
 
 ## Additional Notes:
 
@@ -136,3 +147,4 @@ Now, as long as all thoth team's namespaces have `metadata.name` beginning with 
 [15]: https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/
 [16]: https://argoproj.github.io/argo-cd/operator-manual/user-management/#dex
 [17]: https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/#bases-and-overlays
+[18]: https://github.com/operate-first/argocd-apps
