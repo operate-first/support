@@ -21,6 +21,8 @@ Operate First also manages various applications and services in the environments
 
 You can find our availability dashboards for various managed services [here][22].
 
+> Note: Currently, access to monitoring and dashboards has been restricted (i.e. Prometheus and Grafana), due to pending discussions regarding EULAs and data licensing. In the meantime if you need access to these monitoring services, please make an issue, and we will try to accommodate your request.
+
 #### [Open Data Hub (ODH)][15]
 Dashboard:  https://odh.operate-first.cloud/
 
