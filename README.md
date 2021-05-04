@@ -1,4 +1,4 @@
-### operate first workloads
+### Operate First - Getting Started
 
 #### This readme contains a getting started guide to Operate First.
 
@@ -12,28 +12,28 @@ If you are interested in bringing your project to the Operate First Environment 
 
 3. The Mass Open Cloud (MOC) is the production cloud resource where projects are run.
 
-### Observing
+### Observing and interacting with the Ops team
 
 Projects are expected to work with the ops team in the open in github https://github.com/operate-first
 There is also work done to manage the infrastructure that can be found in the Open Infrastructure Labs project https://github.com/open-infrastructure-labs
 
-To see what’s happening right now, chat is done on google chat in a room called “Operate First Ops”. 
-You may need a specific invite to it, if so let one of the folks here know 
-
+To see what’s happening right now, chat is done in the slack channel https://app.slack.com/client/T01SKMNPRUG/C01RF4SPNDD  
 There is an associated mailing list hosted by the MOC: Operate-first-users https://chat.google.com/room/AAAAAYpDdc8
+
 Open Infrastructure Labs also has a mailing list: Openinfralabs http://lists.opendev.org/cgi-bin/mailman/listinfo/openinfralabs
 You can view a dashboard in the OI Labs github to see an overview of what’s happening https://github.com/orgs/open-infrastructure-labs/projects/2
 
 
 ### Bring your project
 
-To get connected and bring your project to the MOC, first bring it to the “MOC Operate First Project Coordination meeting”, which is held on alternate Wednesday’s 8AM US Eastern time. (even numbered weeks for 2020) Meeting url: https://meet.google.com/kea-qtds-enp?authuser=0&hs=122.
+To get connected and investigate bringing your project to the MOC, you can join the general mailing list at https://listman.redhat.com/mailman/listinfo/operate-first and introduce it.
 
-There is another bi-weekly meeting that shares the same time slot, called “MOC/ODH sprint planning” and it is primarily focused on planning the activities involving the fundamentals of the cloud environment. (Odd numbered weeks for 2021) Meeting url: https://meet.google.com/xeg-usjr-sau?authuser=0&hs=122
+Next step is bringing the discussion to the “MOC Operate First Project Coordination meeting”, which is held on alternate Wednesday’s 8AM US Eastern time. (even numbered weeks for 2020) Meeting url: https://meet.google.com/kea-qtds-enp?authuser=0&hs=122. (email bburns@redhat.com for an invite).
+
+There is another bi-weekly meeting an the alternate Wednesdays at 8:30 AM US Eastern time, called “MOC/ODH sprint planning” and it is primarily focused on the Ops team planning. (Odd numbered weeks for 2021) Meeting url: https://meet.google.com/xeg-usjr-sau?authuser=0&hs=122
 
 More detailed information on onboarding to a cluster can be found here: https://www.operate-first.cloud/users/support/docs/onboarding_to_cluster.md
 
-Projects are expected to create document here with a brief description of the project and limks to their repo.
 
 ### Understanding the environment
 
@@ -47,9 +47,9 @@ There are a few basic things that need to be understood about the Operate First 
 
 - While a production cloud, the MOC is taking in pre-release software, and thus stability is not guaranteed, and should not be expected. No backup of user data is made. There is no SLA.
 
-- It’s free, but the cost is commitment. The MOC is not a place to bring a project and then leave. It’s expected that the developers will actively participate with the operators whenever needed and be available to help sort out issues.
+- It’s free, but the cost is commitment. The MOC is not a place to bring a project and then leave. It’s expected that the developers will actively participate with the operators when needed and be available to help sort out issues.
 
-- The benefit to project developers is bridging back what’s learned to improve their project. 
+- The benefit to project developers is bringing back what’s learned to improve their project. 
 
 - Also, projects need to agree that telemetry can be freely harvested from the cloud. It’s purpose is to help evolve open source cloud operations and it extends to building AI Ops tooling.
 
