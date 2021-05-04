@@ -17,7 +17,7 @@ If you are interested in bringing your project to the Operate First Environment 
 Projects are expected to work with the ops team in the open in github https://github.com/operate-first
 There is also work done to manage the infrastructure that can be found in the Open Infrastructure Labs project https://github.com/open-infrastructure-labs
 
-To see what’s happening right now, chat is done in the slack channel https://app.slack.com/client/T01SKMNPRUG/C01RF4SPNDD  
+To see what’s happening right now, online chat is done at http://operatefirst.slack.com/. 
 There is an associated mailing list hosted by the MOC: Operate-first-users https://chat.google.com/room/AAAAAYpDdc8
 
 Open Infrastructure Labs also has a mailing list: Openinfralabs http://lists.opendev.org/cgi-bin/mailman/listinfo/openinfralabs
