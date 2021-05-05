@@ -18,7 +18,7 @@ Projects are expected to work with the ops team in the open in github https://gi
 There is also work done to manage the infrastructure that can be found in the Open Infrastructure Labs project https://github.com/open-infrastructure-labs
 
 To see what’s happening right now, online chat is done at http://operatefirst.slack.com/.
-There is an associated mailing list hosted by the MOC: Operate-first-users https://chat.google.com/room/AAAAAYpDdc8
+There is an associated mailing list hosted by the MOC: Operate-first-users https://mail.massopen.cloud/mailman/listinfo/operate-first-users
 
 Open Infrastructure Labs also has a mailing list: Openinfralabs http://lists.opendev.org/cgi-bin/mailman/listinfo/openinfralabs
 You can view a dashboard in the OI Labs github to see an overview of what’s happening https://github.com/orgs/open-infrastructure-labs/projects/2
@@ -28,9 +28,9 @@ You can view a dashboard in the OI Labs github to see an overview of what’s ha
 
 To get connected and investigate bringing your project to the MOC, you can join the general mailing list at https://listman.redhat.com/mailman/listinfo/operate-first and introduce it.
 
-Next step is bringing the discussion to the “MOC Operate First Project Coordination meeting”, which is held on alternate Wednesday’s 8AM US Eastern time. (even numbered weeks for 2020) Meeting url: https://meet.google.com/kea-qtds-enp?authuser=0&hs=122. (email bburns@redhat.com for an invite).
+Next step is bringing the discussion to the “Operate First Project Coordination meeting”, which is held on alternate Wednesday’s 8:30AM US Eastern time. (even numbered weeks for 2020) Meeting url: https://meet.google.com/kea-qtds-enp?authuser=0&hs=122. (email bburns@redhat.com for an invite).
 
-There is another bi-weekly meeting an the alternate Wednesdays at 8:30 AM US Eastern time, called “MOC/ODH sprint planning” and it is primarily focused on the Ops team planning. (Odd numbered weeks for 2021) Meeting url: https://meet.google.com/xeg-usjr-sau?authuser=0&hs=122
+There is another bi-weekly meeting an the alternate Wednesdays at 8:30 AM US Eastern time, called “MOC/ODH sprint planning” and it is primarily focused on the Ops team planning. (Odd numbered weeks for 2021) Meeting url: https://meet.google.com/oki-drge-wuc?authuser=0&hs=122
 
 More detailed information on onboarding to a cluster can be found here: https://www.operate-first.cloud/users/support/docs/onboarding_to_cluster.md
 
