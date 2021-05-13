@@ -43,19 +43,23 @@ bash scripts/onboarding.sh NAMESPACE_NAME OWNER_TEAM OPTIONAL_PROJECT_DESCRIPTIO
 
 This script will create
 
-- A namespace in `cluster-scope/base/namespaces/$NAMESPACE_NAME`
-- A blank user group for the `$OWNER_TEAM` if it does not exist yet in the `cluster-scope/base/groups/$OWNER_TEAM`
+- A namespace in `cluster-scope/base/core/namespaces/$NAMESPACE_NAME`
+- A blank user group for the `$OWNER_TEAM` if it does not exist yet in the `cluster-scope/base/user.openshift.io/groups/$OWNER_TEAM`
 - An RBAC component for the project admin role `RoleBinding` in `cluster-scope/components/namespace-admin-rolebinding/$OWNER_TEAM` and maps it to the newly added namespace.
 
-### Enabling namespace deployment to a specific cluster
+### Enabling namespace deployment to Zero cluster
 
 ```sh
-cd cluster-scope/overlays/TARGET_CLUSTER
-kustomize edit add resource ../../base/namespaces/$NAMESPACE
+cd cluster-scope/overlays/$ENV/$TARGET_CLUSTER
+kustomize edit add resource ../../base/core/namespaces/$NAMESPACE
 ```
 
 ### Authenticate via OpenShift
-Each supported component provides a login button which states "Login via OpenShift" or "Sign in with OpenShift". This will lead the user to an authentication provider selection screen:
+Users are automatically created upon login to the appropriate cluster. This is done by logging in via SSO (any gmail account will work).
+
+For the `MOC/Zero` you can access the login from [this link](https://console-openshift-console.apps.zero.massopen.cloud/).
+
+This will lead the user to an authentication provider selection screen:
 
 ![Auth provider selection screen in OpenShift](assets/images/openshift-login.png)
 
@@ -63,26 +67,17 @@ Please select `moc-sso` provider. Then choose the final account provider that fi
 
 ![MOC auth provider selection screen](assets/images/moc-login.png)
 
+With the user now created, we will need to provide them with appropriate rbac access to this namespace.
+
 ## Giving Users Rbac Permissions
 
-The following steps enable users to access designated cluster/namespaces. This simply consists of adding such users to the appropriate OpenShift groups with access to those cluster/namespaces. Depending on the cluster, these groups may need to be encrypted, or may be stored as plaintext, each scenario requires a different set of steps.
+The following steps enable users to access designated cluster/namespaces. This consists of adding users to the appropriate OpenShift groups.
 
-To recognise which scenario applies to you, please select target cluster in `cluster-scope/overlays/TARGET_CLUSTER`. You either see a `secret-generator.yaml` (encrypted users) file or `group-user_patch.yaml` file (plaintext) in this folder.
+Navigate to `cluster-scope/overlays/$ENV/$TARGET_CLUSTER`.
 
-Please follow the steps according to your use case:
+> Note for moc/zero or moc/infra navigate to `cluster-scope/overlays/moc/common` instead
 
-- [Creating a group or adding users as an encrypted resource](#encrypted-overlay-patch-for-users)
-- [Creating a group or adding users without encryption](#plaintext-overlay-patch-for-users)
-
-### Encrypted overlay patch for users
-
-We'll use sops/ksops for the encryption in here.
-
-Please change your working directory to `cluster-scope/overlays/TARGET_CLUSTER`.
-
-#### Creating new group encrypted overlay patch
-
-Please create following resource describing the users in your group:
+Create the following resource describing the users in your group:
 
 ```yaml
 # groups/GROUP_NAME.yaml
@@ -97,14 +92,23 @@ users:
   - USER_2
 ```
 
-Now please encrypt the file with sops and verify it contains a fingerprint of both GPG keys: the OperateFirst master key and your team's key.
+> Note that the USER_n value is the email used to login via SSO in the preceeding steps.
+
+Encrypt the file with sops. You can find the key to import from [here](https://github.com/operate-first/apps/tree/master/cluster-scope/overlays/moc#secret-management):
+
+```sh
+$ sops --encrypt --encrypted-regex="^users$" --pgp="0508677DD04952D06A943D5B4DC4116D360E3276" groups/GROUP_NAME.yaml > groups/GROUP_NAME.enc.yaml
+$ grep "fp: " groups/GROUP_NAME.enc.yaml
+        fp: 0508677DD04952D06A943D5B4DC4116D360E3276
+```
+
+If you or your team needs the ability to decrypt this file, you may include additional PGP key fingerprints in the sops command:
 
 ```sh
 $ sops --encrypt --encrypted-regex="^users$" --pgp="0508677DD04952D06A943D5B4DC4116D360E3276, YOUR_GPG_KEY_FINGERPRINT" groups/GROUP_NAME.yaml > groups/GROUP_NAME.enc.yaml
 $ grep "fp: " groups/GROUP_NAME.enc.yaml
         fp: 0508677DD04952D06A943D5B4DC4116D360E3276
         fp: YOUR_GPG_KEY_FINGERPRINT
-
 ```
 
 Explanation to the `sops` command:
@@ -128,9 +132,9 @@ files:
 - groups/GROUP_NAME.enc.yaml
 ```
 
-#### Adding user to encrypted overlay patch
-
 Use sops to edit the encrypted group resource patch as:
+
+> Note you can only do this if you included your pgp key in the step above, otherwise ensure all users are added before first encrypting the file.
 
 ```sh
 sops groups/GROUP_NAME.enc.yaml
@@ -138,48 +142,10 @@ sops groups/GROUP_NAME.enc.yaml
 
 Then simply append the list of users with the new users that need to be added.
 
-### Plaintext overlay patch for users
-
-This is expected to be a simple JSON kustomize patch.
-
-Please change your working directory to `cluster-scope/overlays/TARGET_CLUSTER`.
-
-#### Creating new group plaintext overlay patch
-
-Create a file containing a JSON patch that looks like this:
-
-```yaml
-# group-user_patch.yaml
-- op: add
-  path: /users/-
-  value: USER_1
-- op: add
-  path: /users/-
-  value: USER_2
-```
-
-And list it as a patch for groups you desire to patch:
-
-```yaml
-# kustomization.yaml
-patchesJson6902:
-  ...
-  - path: group-user_patch.yaml
-    target:
-      group: user.openshift.io
-      kind: Group
-      name: GROUP_NAME
-      version: v1
-```
-
-#### Adding users to plaintext overlay patch
-
-This is very similar to the previous section. Just edit the patch file and add new users to the group patch and verify this file propagates to the appropriate groups in the `kustomization.yaml`.
-
 ## Finalize
 
 Please stage your changes and send them as a PR against the [operate-first/apps](https://github.com/operate-first/apps) repository. Make sure:
 
-- Change set includes only you modifications within the `cluster-scope` application.
+- Change set includes only your modifications within the `cluster-scope` application.
 - Change set may include your optional changes to the `.sops.yaml` file.
-- Your commit **doesn't include any sensitive data as an unencrypted resource**, such resources should be included only as encrypted.
+- Your commit **doesn't include any sensitive data such as an unencrypted resource**, such resources should be included only as encrypted.
