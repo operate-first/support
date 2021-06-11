@@ -1,6 +1,6 @@
 # Resource Quota Tiers
 
-When requesting a namespace, you can choose from 1 of 3 tier options for your resource quota:
+When requesting a namespace, you can choose from 1 of 4 tier options for your resource quota:
 
 |         | CPU Cores | Memory | Storage |
 |---------|-----------|--------|---------|
