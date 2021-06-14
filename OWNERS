@@ -13,7 +13,6 @@ reviewers:
   - HumairAK
   - tumido
   - larsks
-  - ipolonsk
 
 labels:
   - sig/documentation
