@@ -4,8 +4,11 @@ This document serves as a guide for adding cluster scoped resources of `Namespac
 
 Currently we support 2 ways to request/perform onboarding to any supported clusters:
 
-1. Onboarding request - please use the **Onboarding to Cluster** issue template in [operate-first/support](https://github.com/operate-first/support) repository.
+1. Make an Onboarding issue request. Use the **Onboarding to Cluster** issue template in [operate-first/support](https://github.com/operate-first/support) repository.
 2. Opening a PR with the desired changes. The rest of this doc focuses on this second option. We'd gladly welcome your contributions.
+
+> NOTE: Choosing option 2 requires a PR to be made for onboarding after completing the steps outlined below. The actual
+> changes will NOT take affect until after this PR is merged.
 
 ## Prerequisites
 
@@ -13,6 +16,8 @@ You will need pre-requisite tools to follow along with this doc, please do one o
 
 - Install our [toolbox](https://github.com/operate-first/toolbox) to have the developer setup ready automatically for you.
 - Install the tools manually. You'll need [kustomize](https://kustomize.io/), [sops](https://github.com/mozilla/sops) and [ksops](https://github.com/viaduct-ai/kustomize-sops).
+
+You will also need the `opfcli` install the latest version from [here](https://github.com/operate-first/opfcli/releases).
 
 Please fork/clone the [operate-first/apps](https://github.com/operate-first/apps) repository. **During this whole setup, we'll be working within this repository.**
 
@@ -38,10 +43,10 @@ For easier [onboard to ArgoCD](https://github.com/operate-first/argocd-apps/blob
 Please run:
 
 ```sh
-bash scripts/onboarding.sh NAMESPACE_NAME OWNER_TEAM OPTIONAL_PROJECT_DESCRIPTION
+opfcli create-project $NAMESPACE_NAME $OWNER_TEAM -d $OPTIONAL_PROJECT_DESCRIPTION
 ```
 
-This script will create
+This command will create:
 
 - A namespace in `cluster-scope/base/core/namespaces/$NAMESPACE_NAME`
 - A blank user group for the `$OWNER_TEAM` if it does not exist yet in the `cluster-scope/base/user.openshift.io/groups/$OWNER_TEAM`
@@ -51,7 +56,21 @@ This script will create
 
 ```sh
 cd cluster-scope/overlays/$ENV/$TARGET_CLUSTER
-kustomize edit add resource ../../base/core/namespaces/$NAMESPACE
+```
+
+Open the `kustomization.yaml` file in this folder and add `../../base/core/namespaces/$NAMESPACE` to the `resources` field.
+We aim to keep this field alphabetically sorted for better human readability:
+
+```yaml
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+...
+- ../../base/core/namespaces/$NAMESPACE
+...
+
 ```
 
 ### Authenticate via OpenShift
