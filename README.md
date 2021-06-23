@@ -2,78 +2,67 @@
 
 Website:  https://www.operate-first.cloud/
 
-This is the support repository for the Operate First Initiative.
+GitHub Support Repository: https://github.com/operate-first/support
 
-For any questions, concerns, and/or requests, please use the appropriate [Issue Template][1]. If no template fits your requirement, then please make a regular GitHub issue [here][2].
+For any questions, concerns, and/or requests, please use the appropriate [Issue Template][1] to open an issue on our GitHub. If no template fits your requirement, then please make a regular GitHub issue [here][2].
+
+## End User Support
+
+We have a [community slack channel](https://join.slack.com/t/operatefirst/shared_invite/zt-o2gn4wn8-O39g7sthTAuPCvaCNRnLww) where we post announcements, general information, and more. If you have any questions, feel free to post a message to the `#support` channel.
 
 ## [MOC][14] Environment
 
-Operate First initiative currently manages two clusters which are a part of the MOC environment. These are:
+The Operate First initiative currently manages two clusters within the MOC environment.
 
-- `Zero` cluster. This cluster houses all user workloads.
-- `Infra` cluster. This cluster is the management cluster, it is intentionally minimal and houses ACM and ArgoCD.
+- `Zero` cluster for all user workloads
+- `Infra` cluster for cluster management, housing ACM and ArgoCD
 
 Please create an issue [here][3] if you would like to use a cluster. Note that unless you want to use ACM or operate ArgoCD, you are likely looking for access to the Zero cluster.
 
 ## Managed Services
 
-Operate First also manages various applications and services in the environments listed above. Access to these services is available to the general public.
+Operate First manages various applications and services in the environments listed above. These services are accessible to the general public, and their availability dashboards can be found [here][22].
 
-You can find our availability dashboards for various managed services [here][22].
+> Note: Access to monitoring and dashboards (i.e. Prometheus and Grafana) is currently restricted, pending discussions on EULAs and data licensing. If you need to access these services in the meantime, please make an issue. We will do our best to accommodate your request.
 
-> Note: Currently, access to monitoring and dashboards has been restricted (i.e. Prometheus and Grafana), due to pending discussions regarding EULAs and data licensing. In the meantime if you need access to these monitoring services, please make an issue, and we will try to accommodate your request.
+* [Open Data Hub][15]
+    * We manage a deployment of Open Data Hub (ODH) on the MOC Zero cluster
+    * [Read more](4) about our deployment of ODH and access our [dashboard](https://odh.operate-first.cloud/)
 
-#### [Open Data Hub (ODH)][15]
-Dashboard:  https://odh.operate-first.cloud/
+* [Kubeflow][16]
+    * We deploy a selection of Kubeflow components on the MOC Zero cluster
+    * [Read more](5) about our deployment of Kubeflow and access our [dashboard](http://istio-ingressgateway-istio-system.apps.zero.massopen.cloud/)
 
-We manage a deployment of ODH on the MOC Zero cluster. You can read more about our deployment of Open Data Hub [here][4].
+* [ArgoCD][17]
+    * We manage a multi-tenant deployment of ArgoCD on the MOC Infra cluster
+    * Anyone can be onboarded to this ArgoCD instance and use it to deploy to any cluster managed by Operate First
+        * Before being onboarded to ArgoCD, you must be onboarded to the OCP cluster you wish to deploy your applications on
+        * Request access to an OCP cluster by filing an issue [here][6] and ArgoCD by filing an issue [here][7]
+    * Console: https://argocd.operate-first.cloud
+    * Monitoring: https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/97AYZMTGk/argocd?orgId=1
 
-#### [Kubeflow][16]
-Dashboard: http://istio-ingressgateway-istio-system.apps.zero.massopen.cloud/
+* [Observatorium][18]
+    * We have an instance of Observatorium currently being used to provision Thanos and Loki
+    * Thanos enables long term storage for Prometheus (deployed by ODH)
+        * Anyone can enable their applications deployed on Zero cluster to be monitored by this Prometheus instance
+        * To do so, follow the instructions [here][8] and make a pull request against this repo
+    * Loki is used to query logs; click [here][9] to learn more about sending or retrieving logs using Loki
+    * Thanos: http://thanos-query-frontend-opf-observatorium.apps.zero.massopen.cloud
+    * Monitoring: https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/dashboards/f/VYns1DlGz/thanos
 
-We deploy a selection of Kubeflow components on the MOC Zero cluster. You can read more about our deployment of Kubeflow [here][5].
+* [Cluster Logging Operator][19]
+    * We deploy the Cluster Logging Operator (CLO) with Elasticsearch and Kibana on the MOC Zero cluster
+    * Anyone who has been onboarded to the Zero cluster can access their application logs via [Kibana](https://kibana-openshift-logging.apps.zero.massopen.cloud/)
+    * You can also curl directly to Elasticsearch from [this route](https://elasticsearch-openshift-logging.apps.zero.massopen.cloud), but you will need to provide your OCP bearer token
 
-#### [ArgoCD][17]
-Console: https://argocd.operate-first.cloud
+* [Openshift Container Storage][20]
+    * We deploy the Openshift Container Storage (OCS) operator on the MOC Zero cluster
+    * OCS provides both persistent volumes and S3 compatible object storage via Rook Operator
+    * Users can deploy their own S3 buckets via ObjectBucketClaims - see [here][10] for details
 
-Monitoring: https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/97AYZMTGk/argocd?orgId=1
-
-We manage a multi-tenant deployment of ArgoCD which runs on the MOC Infra cluster. Anyone can be onboarded to this ArgoCD instance and use it to deploy to any cluster managed by Operate First. You will first need to be onboarded to the OCP cluster you would like to deploy your applications on, then be onboarded to ArgoCD.
-
-To request access to an OCP cluster file an issue [here][6].
-
-To request access to ArgoCD file an issue [here][7].
-
-#### [Observatorium][18]
-
-Thanos: http://thanos-query-frontend-opf-observatorium.apps.zero.massopen.cloud
-
-Monitoring: https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/dashboards/f/VYns1DlGz/thanos
-
-We have the Observatorium operator deployed on the Zero cluster. The operator deploys an instance of Observatorium which is currently used to provision Thanos for long term storage, and Loki for querying logs.
-
-Thanos is used to enable long term storage for our Prometheus (Deployed by ODH). Anyone can enable their applications (deployed on Zero cluster) to be monitored by this Prometheus instance. To add monitoring to your applications, you can follow the instructions [here][8] and make a PR against this repo.
-
-You can also send or retrieve logs using Loki. See [here][9] to learn more.
-
-#### [Cluster Logging Operator][19]
-Kibana UI: https://kibana-openshift-logging.apps.zero.massopen.cloud/
-
-Elasticsearch Route: https://elasticsearch-openshift-logging.apps.zero.massopen.cloud
-
-We deploy the CLO operator on the MOC Zero cluster. With it, we have Elasticsearch and Kibana deployed. Anyone that has been onboarded to the Zero cluster can access their Application logs via Kibana. You can also curl directly to Elasticsearch using the route above, but you will need to provide your OCP bearer token.
-
-#### [Openshift Container Storage (OCS)][20]
-We deploy the OCS operator on the MOC Zero cluster. OCS provides both persistent volumes and S3 compatible object storage via Rook Operator. Users can deploy their own S3 buckets via ObjectBucketClaims.  See [here][10] for details.
-
-#### [Dex OIDC Provider][21]
-We manage an instance of Dex on the Zero cluster that is currently being worked on to provide authentication for some of our services. This instance can be used to also drive authentication for other users. Docs for this are not yet available, but for the experienced, you can find the configurations [here][11].
-
-## End User Support
-
-Slack: https://join.slack.com/t/operatefirst/shared_invite/zt-o2gn4wn8-O39g7sthTAuPCvaCNRnLww
-
-The community slack channel can be found in the link above. If you have any questions feel free to post a message to the `#support` channel.
+* [Dex OIDC Provider][21]
+    * We manage an instance of Dex on the Zero cluster; we are working towards using Dex to provide authentication for some of our services
+    * Our Dex instance can also be used to drive authentication for other users. While documents are not yet available for this, experienced users can find the configurations [here][11]
 
 [1]: https://github.com/operate-first/support/issues/new/choose
 [2]: https://github.com/operate-first/odh-moc-support/issues
