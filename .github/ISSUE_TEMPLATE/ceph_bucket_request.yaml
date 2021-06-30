@@ -1,0 +1,52 @@
+name: "User support: S3 Storage request"
+description: Template for users of ODH apps requesting S3/Ceph object storage.
+title: "BUCKET: <name>"
+labels: [kind/onboarding, area/bucket]
+assignees: [first-operator]
+body:
+    - type: input
+      id: username
+      attributes:
+          label: Username
+          description: Your MOC user name and which applications deployed by our team you're planning to use the bucket at
+          placeholder: username
+      validations:
+          required: true
+    - type: input
+      id: bucket-name
+      attributes:
+          label: Desired bucket name
+          description: Due to technical limitation we can't promise you a bucket name, instead we will use your preferred name as a prefix to the bucket name.
+          placeholder: bucket
+      validations:
+          required: true
+    - type: input
+      id: bucket-size
+      attributes:
+          label: Maximal bucket size
+          description: Planned maximal total bucket size in GiB. Default quota is 2GiB.
+          placeholder: 2GiB
+      validations:
+          required: false
+    - type: input
+      id: bucket-object-count
+      attributes:
+          label: Maximal bucket object count
+          description: Planned maximal count of objects in your bucket. Default quota is 10000.
+          placeholder: "10000"
+      validations:
+          required: false
+    - type: textarea
+      id: gpg
+      attributes:
+          label: Your GPG key or contact
+          description: Please specify, how we can reach out to you securely so we can share your bucket credentials and access details. Providing us with your GPG key is preferred.
+          placeholder: |
+              Example: `0508677DD04952D06A943D5B4DC4116D360E3276` available from keys.gnupg.net
+      validations:
+          required: false
+    - type: markdown
+      attributes:
+          value: |
+              ---
+              If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs/claiming_object_store.md](https://github.com/operate-first/support/blob/main/docs/claiming_object_store.md) guide.
