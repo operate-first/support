@@ -1,9 +1,12 @@
 name: Onboard to a cluster
-description: Get access to an Operate-First managed cluster.
+description: "Get access to an Operate-First managed cluster. PLEASE NOTE: We are currently capped on hardware compute resources. Onboarding requests are currently put on hold until new hardware arrives."
 title: "NEW PROJECT: <name>"
 labels: [kind/onboarding, area/cluster]
 assignees: [first-operator]
 body:
+    - type: markdown
+      attributes:
+          value: "PLEASE NOTE: We are currently capped on hardware compute resources. Onboarding requests are currently put on hold. We are expecting new hardware soon, until then your onboard request will remain in a pending state."
     - type: dropdown
       id: cluster
       attributes:
