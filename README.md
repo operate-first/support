@@ -14,8 +14,14 @@ We have a [community slack channel](https://join.slack.com/t/operatefirst/shared
 
 The Operate First initiative currently manages two clusters within the MOC environment.
 
-- `Zero` cluster for all user workloads
-- `Infra` cluster for cluster management, housing ACM and ArgoCD
+- [`Zero` cluster][zero] for all user workloads
+- [`Infra` cluster][infra] for cluster management, housing ACM and ArgoCD
+
+## [Hetzner][23] Environment
+
+Operate First also deploys within EMEA region. Following clusters are deployed at Hetzner Cloud:
+
+- [`Rick` cluster][rick] for experimental user workloads
 
 Please create an issue [here][3] if you would like to use a cluster. Note that unless you want to use ACM or operate ArgoCD, you are likely looking for access to the Zero cluster.
 
@@ -86,3 +92,8 @@ Operate First manages various applications and services in the environments list
 [20]: https://www.openshift.com/blog/introducing-openshift-container-storage-4-2
 [21]: https://github.com/dexidp/dex
 [22]: https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/r7WqgaBMk/operatefirst-availability?orgId=1&refresh=1m
+[23]: https://www.hetzner.com/
+
+[zero]: https://console-openshift-console.apps.zero.massopen.cloud/
+[infra]: https://console-openshift-console.apps.moc-infra.massopen.cloud/
+[rick]: https://console-openshift-console.apps.rick.emea.operate-first.cloud/
