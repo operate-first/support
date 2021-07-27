@@ -1,0 +1,101 @@
+name: "Onboard to Continuous Deployment"
+description: "Request a new ArgoCD access, project, application, or add a new
+user to an existing ArgoCD Project."
+title: "PROJECT: <name>"
+labels: [kind/onboarding, area/argocd]
+assignees: [first-operator]
+body:
+    - type: checkboxes
+      id: argocd-options
+      attributes:
+          label: Select all that apply
+          options:
+          - label: Create a new ArgoCD project for existing team
+          - label: Enlist an application to be deployed automatically via ArgoCD
+          - label: Add a new user to an ArgoCD Project
+    - type: markdown
+      attributes:
+          value: "# Creating a new project"
+    - type: input
+      id: team-name
+      attributes:
+          label: Team name
+          description: Please tell us your team name, which corresponds to [an already available user `Group`](https://github.com/operate-first/apps/tree/master/cluster-scope/base/user.openshift.io/groups).
+          placeholder: team-name
+    - type: dropdown
+      id: target-cluster
+      attributes:
+          label: Target cluster
+          description: Choose a cluster from this list
+          options:
+              - Zero
+              - Infra
+              - Rick
+    - type: input
+      id: managed-namespaces
+      attributes:
+          label: Managed namespaces
+          description: The target namespaces that should be managed by ArgoCD. Preferably using [a single (team name) prefix](https://github.com/operate-first/support/blob/main/docs/onboarding_to_argocd.md#additional-notes).
+          placeholder: target-namespace
+    - type: markdown
+      attributes:
+          value: "# Deploying a new application"
+    - type: input
+      id: project-name
+      attributes:
+          label: Team name or your Argo CD project
+          description: Please specify your Argo CD project name. If you're using this template to request both, project and application, you can skip this field.
+          placeholder: argocd-project-name
+    - type: input
+      id: git-source
+      attributes:
+          label: Application source git repository
+          description: URL to the source repository. Please specify if the repository is private. In that case we'll exchange credentials later on.
+          placeholder: repository-url
+    - type: input
+      id: manifest-path
+      attributes:
+          label: Path to manifests within the repository
+          description: Relative path within the repository to the resources you want Argo CD to deploy.
+          placeholder: relative-path
+    - type: dropdown
+      id: target-cluster-new-app
+      attributes:
+          label: Target cluster
+          description: Choose a cluster from this list
+          options:
+              - Zero
+              - Infra
+              - Rick
+    - type: input
+      id: target-namespace-new-app
+      attributes:
+          label: Target namespace for the application
+          description: Please specify an existing namespace in the target cluster which is owned by your team. If you want a new namespace to be created, please file an issue via the [Onboarding to a cluster](https://github.com/operate-first/support/issues/new/choose) template.
+          placeholder: my-namespace
+    - type: markdown
+      attributes:
+          value: "# Add a new user to an ArgoCD Project"
+    - type: input
+      id: new-username
+      attributes:
+          label: User name
+          description: Please specify your MOC OCP User Name.
+          placeholder: john at gmail.com
+    - type: input
+      id: new-user-team-name
+      attributes:
+          label: Team name
+          description: Please specify your team Name.
+          placeholder: my-team-name
+    - type: input
+      id: new-user-argocd-project
+      attributes:
+          label: ArgoCD Project
+          description: Please specify the ArgoCD project this user should be added to.
+          placeholder: argocd-project-name
+    - type: markdown
+      attributes:
+          value: |
+              ---
+              If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs/onboarding_team_to_argo_cd.md](https://github.com/operate-first/support/blob/main/docs/onboarding_to_argocd.md) and/or the [docs/add_application.md](https://github.com/operate-first/argocd-apps/blob/main/docs/add_application.md) guides.

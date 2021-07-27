@@ -1,0 +1,26 @@
+name: "User support: JupyterHub hardware requirements"
+description: "Template for users of JupyterHub requesting hardware quota upgrade: disk size, CPU/GPU/Memory."
+title: "PROJECT: <name>"
+labels: [kind/onboarding, area/JupyterHub]
+assignees: [first-operator]
+body:
+    - type: input
+      id: name
+      attributes:
+          label: User details
+          description: Your user name
+          placeholder: username
+      validations:
+          required: true
+    - type: textarea
+      id: resources-change
+      attributes:
+          label: Desired resource change
+          description: Please specify what resource quota you want to change and what would be the desired limit for you.
+      validations:
+          required: true
+    - type: markdown
+      attributes:
+          value: |
+              ---
+              If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs/user_profiles.md](https://github.com/operate-first/support/blob/main/docs/user_profiles.md) guide.
