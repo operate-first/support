@@ -1,0 +1,30 @@
+---
+name: "User support: New Python package index request"
+description: "Template for users requesting new Python package index on Operate First Pulp instance."
+title: "[Pulp] New Python package index request:"
+labels: [pulp, user-support]
+assignees:
+ - fridex
+ - harshad16
+body:
+ - type: input
+   id: python-package-index-name
+   attributes:
+    label: Python package index name
+    description: Name of the Python package index to be provisioned
+    placeholder: ex. test
+   validations:
+    required: true
+ - type: input
+   id: team-name
+   attributes:
+    label: Requester
+    description: Name of the team requesting Python package index
+    placeholder: ex. operate-first
+   validations:
+    required: true
+ - type: textarea
+   id: info
+   attributes:
+    label: Additional info
+    description: Any additional info you find relevant to this request
