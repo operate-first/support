@@ -1,8 +1,7 @@
-### Operate First - Getting Started
+### Getting started with Operate First
 
-#### This readme contains a getting started guide to Operate First.
-
-If you are interested in bringing your project to the Operate First Environment at the Mass Open Cloud (MOC) you have come to the right place. Below is important information and instructions on how to get started.
+If you are an open source developer interested in bringing your project to an Operate First environment, you have come to the right place.
+Below is important information and instructions on how to get started.
 
 ### There are 3 parts to Operating First
 
@@ -10,7 +9,7 @@ If you are interested in bringing your project to the Operate First Environment 
 
 2. The Open Infrastructure Labs is the upstream where the cloud operators and project developers work in the open to Operate First.
 
-3. The Mass Open Cloud (MOC) is the production cloud resource where projects are run.
+3. The Mass Open Cloud (MOC) is a production cloud resource where projects are run.
 
 ### Observing and interacting with the Ops team
 
