@@ -24,7 +24,7 @@ Please fork/clone the [operate-first/apps](https://github.com/operate-first/apps
 For successful completion of this guide you need to understand what the aim is. Please have prepared following data:
 
 - Name of the onboarded team.
-- Desired namespace name. Please use your team name as a prefix. This will make it easier for you to [onboard to ArgoCD](https://github.com/operate-first/argocd-apps/blob/main/docs/onboard_team_to_argocd.md) later on.
+- Desired namespace name. Please use your team name as a prefix. This will make it easier for you to [onboard to ArgoCD](./onboarding_to_argocd.md) later on.
 - List of users you'd like to add to your team.
 - An optional team GPG key, in case you would like to modify the encrypted list of users of your team later on.
 
@@ -36,7 +36,7 @@ In general we store all the cluster-scoped resources in a `cluster-scope` kustom
 
 ## Adding namespaces
 
-For easier [onboard to ArgoCD](https://github.com/operate-first/argocd-apps/blob/main/docs/onboard_team_to_argocd.md) later on, we prefer to follow a name pattern for all our namespaces. Please use your team name as a prefix to the namespace name like so: `$OWNER_TEAM-example-project`.
+For easier [onboard to ArgoCD](./onboarding_to_argocd.md) later on, we prefer to follow a name pattern for all our namespaces. Please use your team name as a prefix to the namespace name like so: `$OWNER_TEAM-example-project`.
 
 ### Base resources
 
@@ -55,7 +55,7 @@ This command will create:
 ### Enabling namespace deployment to Zero cluster
 
 ```sh
-cd cluster-scope/overlays/$ENV/$TARGET_CLUSTER
+cd cluster-scope/overlays/prod/$ENV/$TARGET_CLUSTER
 ```
 
 Open the `kustomization.yaml` file in this folder and add `../../base/core/namespaces/$NAMESPACE` to the `resources` field.
@@ -92,9 +92,9 @@ With the user now created, we will need to provide them with appropriate rbac ac
 
 The following steps enable users to access designated cluster/namespaces. This consists of adding users to the appropriate OpenShift groups.
 
-Navigate to `cluster-scope/overlays/$ENV/$TARGET_CLUSTER`.
+Navigate to `cluster-scope/overlays/prod/$ENV/$TARGET_CLUSTER`.
 
-> Note for moc/zero or moc/infra navigate to `cluster-scope/overlays/moc/common` instead
+> Note for moc/zero or moc/infra navigate to `cluster-scope/overlays/prod/moc/common` instead
 
 Create the following resource describing the users in your group:
 
@@ -113,7 +113,7 @@ users:
 
 > Note that the USER_n value is the email used to login via SSO in the preceeding steps.
 
-Encrypt the file with sops. You can find the key to import from [here](https://github.com/operate-first/apps/tree/master/cluster-scope/overlays/moc#secret-management):
+Encrypt the file with sops. You can find the key to import from [here](https://github.com/operate-first/apps/tree/master/cluster-scope/overlays/prod/moc#secret-management):
 
 ```sh
 $ sops --encrypt --encrypted-regex="^users$" --pgp="0508677DD04952D06A943D5B4DC4116D360E3276" groups/GROUP_NAME.yaml > groups/GROUP_NAME.enc.yaml
