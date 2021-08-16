@@ -8,10 +8,10 @@ The following are the pre-requisites needed before you can start interacting wit
 
 * Access to [CloudBeaver](http://cloudbeaver-opf-trino.apps.zero.massopen.cloud/)
     * Reach out to Operate First team for credentials (only `admin` account is available now, user authentication is a WIP)
-* Access to [Trino](https://trino-route-opf-trino.apps.zero.massopen.cloud/)
-    * Login with `trino` as the user ID, no password required. User authentication is a WIP
-* Access to [Superset](http://superset-opf-superset.apps.zero.massopen.cloud/)
-    * Reach out to Operate First team to request a user account by creating an issue in the [support repo](https://github.com/operate-first/support/issues/new/choose)
+* Access to [Trino](https://trino-secure-opf-trino.apps.zero.massopen.cloud)
+    * Login with `trino` via OCP
+* Access to [Superset](https://superset-secure-opf-superset.apps.zero.massopen.cloud/)
+    * Login to Superset via OCP. Reach out to Operate First team for sufficient access via [support repo](https://github.com/operate-first/support/issues/new/choose)
 * Data is stored in an S3 bucket hosted on Operate First and the bucket is configured with Trino i.e. Trino has the correct credentials and permission to read the bucket
     * Reach out to Operate First team to create/configure the S3 bucket with Trino via opening an issue in the [support repo](https://github.com/operate-first/support/issues/new/choose). (You can also follow [this document](https://www.operate-first.cloud/users/support/docs/claiming_object_store.md) for requesting an S3 bucket)
 * Data in S3 bucket is contained within directories/folders for it to be exported as a table in Trino and is of the supported data types mentioned [here](https://trino.io/docs/current/connector/hive.html#supported-file-types)
@@ -87,7 +87,7 @@ Reference documents, if the result differs from the desired one:
 
 You can view the logs/performance of each SQL query executed by logging into Trino.
 
-* **Login to Trino**: [https://trino-route-opf-trino.apps.zero.massopen.cloud/](https://trino-route-opf-trino.apps.zero.massopen.cloud/) with `trino` as user id.
+* **Login to Trino**: [https://trino-secure-opf-trino.apps.zero.massopen.cloud](https://trino-secure-opf-trino.apps.zero.massopen.cloud).
 
 After logging in you should see a landing page which displays the number of queries running, active workers, queries executed etc:
 
@@ -103,7 +103,7 @@ Now that we have the tables created in Trino, we can start creating our dashboar
 
 **The Operate First Superset is already configured to use Trino as the database**.
 
-* **Login to Superset**: [http://superset-opf-superset.apps.zero.massopen.cloud/](http://superset-opf-superset.apps.zero.massopen.cloud/)
+* **Login to Superset**: [https://superset-secure-opf-superset.apps.zero.massopen.cloud/](https://superset-secure-opf-superset.apps.zero.massopen.cloud/)
 
 (**_Note: Reach out to the Operate First team for requesting a user account. You can create an issue for this in the support repo [here](https://github.com/operate-first/support/issues/new/choose)_**)
 
