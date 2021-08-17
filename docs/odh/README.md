@@ -20,9 +20,9 @@ Monitoring: [Link][20]
 
 ### [Grafana][4]
 
-UI: https://grafana-route-opf-monitoring.apps.zero.massopen.cloud
+UI: https://grafana-opf-monitoring.apps.zero.massopen.cloud
 
-> Note: Login via OCP is [WIP][17]
+Submit an issue [here][2] for access.
 
 ### [JupyterHub][6]
 
@@ -54,29 +54,15 @@ AlertManager UI: http://alert-manager-opf-monitoring.apps.zero.massopen.cloud/
 
 You can enable your applications running on the Zero cluster to be monitored by this Prometheus, see [here][23] for details on how to do this.
 
-### Data Catalog
+### [Trino][11]
 
-The ODH Data Catalog consists of:
-
--   ##### [Hue][5]
-
-    UI: https://hue-opf-datacatalog.apps.zero.massopen.cloud/
-
-    Login Credentials: User/Pass is `generic_user`/`operatefirst`
-
-    > Note: Login via OCP is [WIP][15]
-
--   ##### [ThriftServer][11]
-
-    Spark Jobs UI: http://thriftserver-opf-datacatalog.apps.zero.massopen.cloud/jobs/
+UI: https://trino-secure-opf-trino.apps.zero.massopen.cloud/
 
 ### [Superset][12]
 
-UI: http://superset-opf-superset.apps.zero.massopen.cloud/
+UI: https://superset-secure-opf-superset.apps.zero.massopen.cloud
 
-Login Credentials: User/Pass is `generic_user`/`operatefirst`
-
-> Note: Login via OCP is [WIP][18]
+Submit an issue [here][2] for access.
 
 #### Components not deployed
 The following components are currently not deployed:
@@ -97,7 +83,7 @@ If you require any of these components please submit a request [here][2].
 [8]: https://github.com/opendatahub-io/odh-dashboard
 [9]: https://prometheus.io/
 [10]: https://spark.apache.org/
-[11]: https://thrift.apache.org/
+[11]: https://trino.io/
 [12]: https://superset.apache.org/
 [13]: https://www.seldon.io/
 [14]: https://airflow.apache.org/
