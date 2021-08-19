@@ -72,11 +72,11 @@ Operate First manages various applications and services in the environments list
 
 [1]: https://github.com/operate-first/support/issues/new/choose
 [2]: https://github.com/operate-first/odh-moc-support/issues
-[3]: https://github.com/operate-first/support/issues/new?assignees=&labels=onboarding&template=onboarding_to_cluster.md&title=
+[3]: https://github.com/operate-first/support/issues/new?assignees=&labels=onboarding&template=onboarding_to_cluster.yaml&title=
 [4]: ./docs/odh/README.md
 [5]: ./docs/kubeflow/README.md
-[6]: https://github.com/operate-first/support/issues/new?assignees=&labels=onboarding&template=onboarding_to_cluster.md&title=
-[7]: https://github.com/operate-first/support/issues/new?assignees=&labels=onboarding&template=onboarding_argocd.md&title=
+[6]: https://github.com/operate-first/support/issues/new?assignees=&labels=onboarding&template=onboarding_to_cluster.yaml&title=
+[7]: https://github.com/operate-first/support/issues/new?assignees=&labels=onboarding&template=onboarding_argocd.yaml&title=
 [8]: https://github.com/operate-first/support/blob/main/docs/add_service_monitoring.md
 [9]: https://www.operate-first.cloud/users/apps/docs/observatorium/loki/README.md
 [10]: https://rook.io/
