@@ -77,6 +77,8 @@ WITH (
 )
 ```
 
+**Note: Ensure that the table column names are the same as the column names mentioned in your data set.**
+
 Reference documents, if the result differs from the desired one:
 * [SQL Syntax](https://trino.io/docs/current/sql.html)
 * [Supported file types](https://trino.io/docs/current/connector/hive.html#supported-file-types)
