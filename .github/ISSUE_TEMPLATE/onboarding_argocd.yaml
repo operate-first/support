@@ -28,9 +28,10 @@ body:
           label: Target cluster
           description: Choose a cluster from this list
           options:
-              - Zero
               - Infra
               - Rick
+              - Smaug
+              - Balrog
     - type: input
       id: managed-namespaces
       attributes:
