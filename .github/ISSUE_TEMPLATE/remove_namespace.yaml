@@ -1,0 +1,36 @@
+name: "Delete namespace"
+description: "Request deletion of namespace."
+title: "DELETE NAMESPACE: <name>"
+labels: [area/cluster]
+assignees: [first-operator]
+body:
+    - type: dropdown
+      id: cluster
+      attributes:
+          label: Target cluster
+          description: |
+              Please select a cluster.
+          options:
+              - Infra
+              - Rick
+              - Smaug
+              - Balrog
+      validations:
+          required: true
+    - type: input
+      id: namespace
+      attributes:
+          label: Target namespace
+          description: |
+              Please fill in namespace you want to delete. All namespaces can be found in [cluster-scope/base/core/namespaces](https://github.com/operate-first/apps/tree/master/cluster-scope/base/core/namespaces).
+          placeholder: my-namespace
+      validations:
+          required: true
+    - type: checkboxes
+      id: admin
+      attributes:
+          label: Admin of the namespace
+          description: By submitting this issue, I confirm that I am admin of this namespace.
+          options:
+              - label: I am admin of this namespace
+                required: true
