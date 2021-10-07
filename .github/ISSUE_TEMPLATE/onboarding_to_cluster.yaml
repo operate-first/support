@@ -12,12 +12,13 @@ body:
       attributes:
           label: Target cluster
           description: |
-              Please select a cluster from the list at
-              https://github.com/operate-first/apps/tree/master/cluster-scope/overlays/moc#available-clusters
+              Please select a cluster.
           options:
               - Zero
               - Infra
               - Rick
+              - Smaug
+              - Balrog
     - type: input
       id: team-name
       attributes:
