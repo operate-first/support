@@ -33,11 +33,11 @@ Operate First manages various applications and services in the environments list
 
 * [Open Data Hub][15]
     * We manage a deployment of Open Data Hub (ODH) on the MOC Zero cluster
-    * [Read more](4) about our deployment of ODH and access our [dashboard](https://odh.operate-first.cloud/)
+    * [Read more](https://github.com/operate-first/support/tree/main/docs/odh) about our deployment of ODH and access our [dashboard](https://odh.operate-first.cloud/)
 
 * [Kubeflow][16]
     * We deploy a selection of Kubeflow components on the MOC Zero cluster
-    * [Read more](5) about our deployment of Kubeflow and access our [dashboard](http://istio-ingressgateway-istio-system.apps.zero.massopen.cloud/)
+    * [Read more](https://github.com/operate-first/support/tree/main/docs/kubeflow) about our deployment of Kubeflow and access our [dashboard](http://istio-ingressgateway-istio-system.apps.zero.massopen.cloud/)
 
 * [ArgoCD][17]
     * We manage a multi-tenant deployment of ArgoCD on the MOC Infra cluster
