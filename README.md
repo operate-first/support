@@ -8,7 +8,7 @@ For any questions, concerns, and/or requests, please use the appropriate [Issue 
 
 ## End User Support
 
-We have a [community slack channel](https://join.slack.com/t/operatefirst/shared_invite/zt-o2gn4wn8-O39g7sthTAuPCvaCNRnLww) where we post announcements, general information, and more. If you have any questions, feel free to post a message to the `#support` channel.
+We have a [community slack channel][csc1] where we post announcements, general information, and more. If you have any questions, feel free to post a message to the `#support` channel.
 
 ## [MOC][14] Environment
 
@@ -33,11 +33,11 @@ Operate First manages various applications and services in the environments list
 
 * [Open Data Hub][15]
     * We manage a deployment of Open Data Hub (ODH) on the MOC Zero cluster
-    * [Read more](4) about our deployment of ODH and access our [dashboard](https://odh.operate-first.cloud/)
+    * [Read more][odh1] about our deployment of ODH and access our [dashboard][odh2]
 
 * [Kubeflow][16]
     * We deploy a selection of Kubeflow components on the MOC Zero cluster
-    * [Read more](5) about our deployment of Kubeflow and access our [dashboard](http://istio-ingressgateway-istio-system.apps.zero.massopen.cloud/)
+    * [Read more][kf1] about our deployment of Kubeflow and access our [dashboard][kf2]
 
 * [ArgoCD][17]
     * We manage a multi-tenant deployment of ArgoCD on the MOC Infra cluster
@@ -73,8 +73,7 @@ Operate First manages various applications and services in the environments list
 [1]: https://github.com/operate-first/support/issues/new/choose
 [2]: https://github.com/operate-first/odh-moc-support/issues
 [3]: https://github.com/operate-first/support/issues/new?assignees=&labels=onboarding&template=onboarding_to_cluster.yaml&title=
-[4]: ./docs/odh/README.md
-[5]: ./docs/kubeflow/README.md
+
 [6]: https://github.com/operate-first/support/issues/new?assignees=&labels=onboarding&template=onboarding_to_cluster.yaml&title=
 [7]: https://github.com/operate-first/support/issues/new?assignees=&labels=onboarding&template=onboarding_argocd.yaml&title=
 [8]: https://github.com/operate-first/support/blob/main/docs/add_service_monitoring.md
@@ -97,3 +96,9 @@ Operate First manages various applications and services in the environments list
 [zero]: https://console-openshift-console.apps.zero.massopen.cloud/
 [infra]: https://console-openshift-console.apps.moc-infra.massopen.cloud/
 [rick]: https://console-openshift-console.apps.rick.emea.operate-first.cloud/
+
+[odh1]: https://github.com/operate-first/support/tree/main/docs/odh
+[odh2]: https://odh.operate-first.cloud/
+[kf1]: https://github.com/operate-first/support/tree/main/docs/kubeflow
+[kf2]: http://istio-ingressgateway-istio-system.apps.zero.massopen.cloud
+[csc1]: https://join.slack.com/t/operatefirst/shared_invite/zt-o2gn4wn8-O39g7sthTAuPCvaCNRnLww
