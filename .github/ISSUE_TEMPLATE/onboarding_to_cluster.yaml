@@ -137,4 +137,4 @@ body:
       attributes:
           value: |
               ---
-              If you don't want to wait for the maintainers to notice this issue, you can make the changes yourself by submitting a pull request against the configuration repository. Please follow the [docs/onboarding_to_cluster.md](https://github.com/operate-first/support/blob/main/docs/onboarding_to_cluster.md) guide.
+              If you don't want to wait for the maintainers to notice this issue, you can make the changes yourself by submitting a pull request against the configuration repository. Please follow the [docs/onboarding_to_cluster.md](https://github.com/operate-first/apps/blob/master/docs/cluster-scope/onboarding_to_cluster.md) guide.
