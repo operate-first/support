@@ -84,7 +84,7 @@ body:
           label: Namespace Quota
           description: |
               Please pick the resource tier you need for your project from
-              this list: https://github.com/operate-first/support/blob/main/docs/quotas.md
+              this list: https://github.com/operate-first/apps/blob/master/docs/cluster-scope/quotas.md
 
               If none of the tiers are applicable, please choose "custom" and
               specify your requirements (CPU/Memory/Storage) in the next field.
