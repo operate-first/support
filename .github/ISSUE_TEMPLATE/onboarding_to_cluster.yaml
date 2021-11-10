@@ -70,11 +70,7 @@ body:
           description: |
               Please list all users that will require access to the selected cluster.
 
-              Your OpenShift username is the email address associated with the
-              Google account you use to log in to the cluster. If you do not
-              wish to list email addresses in this issue (which is public), you
-              may reach out directly to an operate-first team member to provide
-              that information.
+              Your OpenShift username is the Github username you use to log in to the cluster.
           placeholder: username, username
       validations:
           required: true
