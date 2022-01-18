@@ -80,7 +80,7 @@ body:
           label: Namespace Quota
           description: |
               Please pick the resource tier you need for your project from
-              this list: https://github.com/operate-first/apps/blob/master/docs/cluster-scope/quotas.md
+              this list: https://www.operate-first.cloud/apps/content/cluster-scope/quotas.html
 
               If none of the tiers are applicable, please choose "custom" and
               specify your requirements (CPU/Memory/Storage) in the next field.
@@ -133,4 +133,4 @@ body:
       attributes:
           value: |
               ---
-              If you don't want to wait for the maintainers to notice this issue, you can make the changes yourself by submitting a pull request against the configuration repository. Please follow the [docs/onboarding_to_cluster.md](https://github.com/operate-first/apps/blob/master/docs/cluster-scope/onboarding_to_cluster.md) guide.
+              If you don't want to wait for the maintainers to notice this issue, you can make the changes yourself by submitting a pull request against the configuration repository. Please follow the [onboarding project](https://www.operate-first.cloud/apps/content/cluster-scope/onboarding_to_cluster.html) guide.
