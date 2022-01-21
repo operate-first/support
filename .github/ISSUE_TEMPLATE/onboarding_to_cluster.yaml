@@ -6,7 +6,7 @@ assignees: [first-operator]
 body:
     - type: markdown
       attributes:
-          value: "PLEASE NOTE: We are currently capped on hardware compute resources. Onboarding requests are currently put on hold. We are expecting new hardware soon, until then your onboard request will remain in a pending state."
+          value: "NOTE: You should choose `Smaug` as your target cluster, unless you have specific requirements to choose a different one."
     - type: dropdown
       id: cluster
       attributes:
