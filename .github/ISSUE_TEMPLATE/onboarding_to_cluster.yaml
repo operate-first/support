@@ -12,7 +12,7 @@ body:
               Please select a cluster.
           options:
               - Infra
-              - Rick
+              - Morty
               - Smaug
               - Balrog
     - type: input
