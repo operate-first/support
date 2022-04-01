@@ -9,11 +9,14 @@ body:
       attributes:
           label: Target cluster
           description: |
-              Please select a cluster.
+              Please select a cluster from the list.
           options:
-              - Infra
               - Smaug
+              - Infra
+              - Morty
               - Balrog
+              - OSC-CL1
+              - OSC-CL2
     - type: input
       id: team-name
       attributes:
@@ -100,6 +103,15 @@ body:
           description: |
               If you selected "custom" in previous step, please specify your desired quota here.
           placeholder: 1CPU, 20GiB memory, 30GiB storage
+      validations:
+          required: false
+    - type: input
+      id: documentation
+      attributes:
+          label: Documentation Link
+          description: |
+              If you have any available documentation on your product, please provide the link here.
+          placeholder: https://www.operate-first.cloud
       validations:
           required: false
     - type: markdown
