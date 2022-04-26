@@ -1,6 +1,6 @@
-name: User Story
-description: Add a user story for the Operate First Cloud Instance. Use this to request new features and improvements.
-title: "As a <persona>, I <want to>, <so that>."
+name: Feature Request
+description: Add a feature request from an end user perspective for the Operate First Cloud.
+title: "As a <role>, I <want to>, <so that>."
 labels: [kind/user-story]
 body:
 - type: textarea
