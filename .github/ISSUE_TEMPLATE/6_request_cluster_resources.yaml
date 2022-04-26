@@ -1,0 +1,36 @@
+name: Request Resources
+description: |
+  Request resources that require administrative privileges: CRDs, ClusterRoles, Operators, Quotas.
+title: "Request to add: <your-resource>"
+body:
+   - type: input
+     id: team
+     attributes:
+        label: Team name
+        description: |
+           Please specify on behalf of which team you are requesting this resource.
+     validations:
+        required: true
+   - type: textarea
+     id: context
+     attributes:
+        label: Explain why this resource is needed
+        description: |
+           Please provide some additional context on why this resource is needed.
+     validations:
+        required: true
+   - type: textarea
+     id: name
+     attributes:
+        label: Resource(s) being requested
+        description: |
+           Please list all the resources being requested. Be sure to specify any relevant details like the version.
+           Please also provide any links to manifests/charts/kustomization bundles where this resource may be pulled
+           from.
+     validations:
+        required: true
+   - type: markdown
+     attributes:
+        value: |
+           ---
+           If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the docs [here](https://github.com/operate-first/apps/blob/master/cluster-scope/README.md).

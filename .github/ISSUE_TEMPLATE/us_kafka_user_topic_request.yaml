@@ -1,0 +1,68 @@
+name: "User support: Kafka Topic/User request"
+description: Request Kakfa topics and user credentials.
+title: "Requesting Kafka topic/user"
+body:
+   - type: markdown
+     attributes:
+        value: |
+           # Kafka Topic
+   - type: input
+     id: topic_name
+     attributes:
+        label: Topic Name
+        placeholder: TOPIC_NAME
+     validations:
+        required: true
+   - type: input
+     id: topic_partitions
+     attributes:
+        label: Topic Partitions
+        placeholder: "3"
+     validations:
+        required: true
+   - type: input
+     id: topic_replicas
+     attributes:
+        label: Topic Replicas
+        placeholder: "2"
+     validations:
+        required: true
+   - type: input
+     id: topic_retention
+     attributes:
+        label: Topic Retention
+        placeholder: '6 hours'
+     validations:
+        required: true
+   - type: input
+     id: topic_configuration
+     attributes:
+        label: Topic Configuration
+        placeholder: none
+     validations:
+        required: true
+   - type: markdown
+     attributes:
+        value: |
+           # Kafka Users
+   - type: textarea
+     id: user_names
+     attributes:
+        label: User Names
+        placeholder: user_name
+     validations:
+        required: true
+   - type: textarea
+     id: topic_access
+     attributes:
+        label: Topic Access
+        placeholder: TOPIC_NAMES
+     validations:
+        required: true
+   - type: textarea
+     id: consumer_group_ids
+     attributes:
+        label: Group Ids
+        placeholder: GROUP_IDS
+     validations:
+        required: true

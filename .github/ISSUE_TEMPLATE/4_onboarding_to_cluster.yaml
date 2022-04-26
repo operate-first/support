@@ -1,5 +1,5 @@
 name: Onboard to a cluster
-description: Get access to an Operate-First managed cluster.
+description: Request access to a namespace in an Operate-First managed cluster.
 title: "NEW PROJECT: <name>"
 labels: [kind/onboarding, area/cluster]
 assignees: [first-operator]
