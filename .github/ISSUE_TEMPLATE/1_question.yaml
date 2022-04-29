@@ -1,0 +1,11 @@
+name: Question
+description: Generic question or request
+title: "<your-issue-title>"
+labels: [kind/question]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true

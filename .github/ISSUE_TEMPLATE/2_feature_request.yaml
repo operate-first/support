@@ -1,0 +1,30 @@
+name: Feature Request
+description: Add a feature request from an end user perspective for the Operate First Cloud.
+title: "As a <role>, I <want to>, <so that>."
+labels: [kind/user-story]
+body:
+- type: textarea
+  id: context
+  attributes:
+    description: |
+      Please add any additional context for your story.
+    label: Additional context
+  validations:
+    required: true
+- type: textarea
+  id: criteria
+  attributes:
+    label: Acceptance Criteria
+    placeholder: |
+      - [ ] At least once acceptance criteria should be present
+  validations:
+    required: true
+- type: textarea
+  id: links
+  attributes:
+    label: Relevant links
+    description: |
+      Add any links to resources, issues, etc. that you feel are
+      relevant to this story.
+  validations:
+    required: true

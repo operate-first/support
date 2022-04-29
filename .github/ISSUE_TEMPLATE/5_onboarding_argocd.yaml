@@ -1,6 +1,7 @@
-name: "Onboard to Continuous Deployment"
-description: "Request a new ArgoCD access, project, application, or add a new
-user to an existing ArgoCD Project."
+name: Onboard to ArgoCD
+description: |
+  Request ArgoCD access, project, application,
+  or add a new user to an existing ArgoCD Project.
 title: "PROJECT: <name>"
 labels: [kind/onboarding, area/argocd]
 assignees: [first-operator]
