@@ -11,10 +11,10 @@ body:
           description: |
               Please select a cluster.
           options:
-              - Infra
-              - Morty
-              - Smaug
-              - Balrog
+              - moc/infra
+              - emea/morty
+              - moc/smaug
+              - emea/balrog
     - type: input
       id: team-name
       attributes:
@@ -37,7 +37,7 @@ body:
       validations:
           required: true
     - type: input
-      id: project-name
+      id: namespace
       attributes:
           label: Desired project names
           description: |
