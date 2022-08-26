@@ -12,7 +12,6 @@ body:
               Please select a cluster.
           options:
               - Infra
-              - Morty
               - Smaug
               - Balrog
     - type: input
@@ -101,29 +100,6 @@ body:
           description: |
               If you selected "custom" in previous step, please specify your desired quota here.
           placeholder: 1CPU, 20GiB memory, 30GiB storage
-      validations:
-          required: false
-    - type: textarea
-      id: gpg
-      attributes:
-          label: Your GPG key or contact
-          description: |
-              We store all cluster configuration information in a public git
-              repository. Some information, such as email addresses, can be
-              considered sensitive.  To keep this information secure, we store
-              this information in GPG encrypted files.
-
-              The information about the team members in your `group` will be
-              stored in such a file in our configuration repository.  If you or
-              your team would like to be able to decrypt your team's encrypted
-              OpenShift `group` file then you can provide a GPG key that we will
-              include as part of the encryption procedure.
-
-              If you have a GPG key, please provide us with the key fingerprint
-              and the name of a keyserver on which it is published. For
-              example
-          placeholder: |
-              Example: `0508677DD04952D06A943D5B4DC4116D360E3276` available from keys.gnupg.net
       validations:
           required: false
     - type: markdown
