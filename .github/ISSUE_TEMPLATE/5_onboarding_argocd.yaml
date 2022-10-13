@@ -100,4 +100,4 @@ body:
       attributes:
           value: |
               ---
-              If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs here](https://github.com/operate-first/apps/blob/master/docs/argocd-gitops/onboarding_to_argocd.md) and/or the [docs/add_application.md](https://github.com/operate-first/apps/blob/master/docs/argocd-gitops/add_application.md) guides.
+              If you don't want to wait for the maintainers to notice this issue, you can do the changes yourself. Please follow the [docs here](https://github.com/operate-first/apps/blob/master/docs/content/argocd-gitops/onboarding_to_argocd.md) and/or the [docs/add_application.md](https://github.com/operate-first/apps/blob/master/docs/content/argocd-gitops/add_application.md) guides.
