@@ -1,0 +1,43 @@
+name: Offboard from a cluster
+description: Request access to offboard a namespace and team from an Operate-First managed cluster.
+title: "Off board project from a cluster."
+labels: [kind/offboarding, "script:scripts/offboarding.sh", "task-type:bash", "repo:apps"]
+assignees: [first-operator]
+body:
+  - type: dropdown
+    id: cluster
+    attributes:
+      multiple: false
+      label: Target cluster
+      description: |
+        Please select a cluster.
+      options:
+        - Infra
+        - Smaug
+        - Jerry
+  - type: dropdown
+    id: environment
+    attributes:
+      multiple: false
+      label: Target environment
+      description: |
+        Please select an environment.
+      options:
+        - moc
+        - emea
+  - type: input
+    id: team-name
+    attributes:
+      label: Team name
+      description: "Select a team from this list: https://github.com/operate-first/apps/tree/master/cluster-scope/base/user.openshift.io/groups"
+      placeholder: my-team
+    validations:
+      required: true
+  - type: input
+    id: project-name
+    attributes:
+      label: Desired project names
+      description: "Select a namespace from this list: https://github.com/operate-first/apps/tree/master/cluster-scope/base/core/namespaces"
+      placeholder: my-team-namespace
+    validations:
+      required: true
