@@ -1,109 +1,139 @@
 name: Onboard to a cluster
 description: Request access to a namespace in an Operate-First managed cluster.
 title: "NEW PROJECT: <name>"
-labels: [kind/onboarding, area/cluster]
+labels: [kind/onboarding, "script:scripts/onboarding.sh", "task-type:bash", "repo:apps"]
 assignees: [first-operator]
 body:
-    - type: dropdown
-      id: cluster
-      attributes:
-          label: Target cluster
-          description: |
-              Please select a cluster.
-          options:
-              - Infra
-              - Smaug
-              - Balrog
-    - type: input
-      id: team-name
-      attributes:
-          label: Team name
-          description: |
-              Your team name should be a short identifier consisting of lower
-              case letters, numbers, and dashes (technically, anything thing
-              satisfies [RFC 1123](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-label-names)). For example, `widget-research` is a
-              valid team name, but `Widget Research` is not, because it contains
-              whitespace.
+  - type: dropdown
+    id: cluster
+    attributes:
+      multiple: false
+      label: Target cluster
+      description: |
+        Please select a cluster.
+      options:
+        - Infra
+        - Smaug
+        - Jerry
+  - type: dropdown
+    id: environment
+    attributes:
+      multiple: false
+      label: Target environment
+      description: |
+        Please select an environment.
+      options:
+        - moc
+        - emea
+  - type: input
+    id: team-name
+    attributes:
+      label: Team name
+      description: |
+        Your team name should be a short identifier consisting of lower
+        case letters, numbers, and dashes (technically, anything thing
+        satisfies [RFC 1123](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-label-names)). For example, `widget-research` is a
+        valid team name, but `Widget Research` is not, because it contains
+        whitespace.
 
-              We will use this name to create an OpenShift `group` for you and
-              your team members.
+        We will use this name to create an OpenShift `group` for you and
+        your team members.
 
-              You need to pick a "team name" whether or not you are requesting
-              access for a group of people or an individual. We recommend that
-              you do not use your individual name as a team name.
+        You need to pick a "team name" whether or not you are requesting
+        access for a group of people or an individual. We recommend that
+        you do not use your individual name as a team name.
 
-          placeholder: my-team
-      validations:
-          required: true
-    - type: input
-      id: project-name
-      attributes:
-          label: Desired project names
-          description: |
-              Resources in OpenShift are contained in "namespaces" (also called
-              "projects"). Unless you request otherwise, we will create a single
-              project for you with the same name as your selected team name.
+      placeholder: my-team
+    validations:
+      required: true
+  - type: input
+    id: project-name
+    attributes:
+      label: Desired project names
+      description: |
+        Resources in OpenShift are contained in "namespaces" (also called
+        "projects"). Unless you request otherwise, we will create a single
+        project for you with the same name as your selected team name.
 
-              If you need additional namespaces, or want a project name that
-              differs from your team name, please indicate that here. Project
-              names have the same requirements as team names.
-          placeholder: my-team-namespace
-      validations:
-          required: true
-    - type: textarea
-      id: project-description
-      attributes:
-          label: Project description
-          description: |
-              Please provide a brief description of your project and any
-              particular resource requirements of which you're aware.
-      validations:
-          required: true
-    - type: textarea
-      id: users
-      attributes:
-          label: Users needing access
-          description: |
-              Please list all users that will require access to the selected cluster.
+        If you need additional namespaces, or want a project name that
+        differs from your team name, please indicate that here. Project
+        names have the same requirements as team names.
+      placeholder: my-team-namespace
+    validations:
+      required: true
+  - type: input
+    id: project-owner
+    attributes:
+      label: Project Owner
+      description: |
+        Designate one gh user as the project owner.
+      placeholder: gh-user
+    validations:
+      required: true
+  - type: textarea
+    id: project-description
+    attributes:
+      label: Project description
+      description: |
+        Please provide a brief description of your project and any
+        particular resource requirements of which you're aware.
+    validations:
+      required: true
+  - type: input
+    id: project-docs-link
+    attributes:
+      label: Link to project documentation
+      description: |
+        Please provide a link to your project website, gh page, resource, or docs for reference.
+      placeholder: https://my-project.com
+    validations:
+      required: true
+  - type: textarea
+    id: users
+    attributes:
+      label: Users needing access
+      description: |
+        Please list all users that will require access to the selected cluster.
 
-              Your OpenShift username is the Github username you use to log in to the cluster.
-          placeholder: username, username
-      validations:
-          required: true
-    - type: dropdown
-      id: quota
-      attributes:
-          label: Namespace Quota
-          description: |
-              Please pick the resource tier you need for your project from
-              this list: https://www.operate-first.cloud/apps/content/cluster-scope/quotas.html
+        Your OpenShift username is the Github username you use to log in to the cluster.
+      placeholder: username,username
+    validations:
+      required: true
+  - type: dropdown
+    id: quota
+    attributes:
+      multiple: false
+      label: Namespace Quota
+      description: |
+        Please pick the resource tier you need for your project from
+        this list: https://www.operate-first.cloud/apps/content/cluster-scope/quotas.html
 
-              If none of the tiers are applicable, please choose "custom" and
-              specify your requirements (CPU/Memory/Storage) in the next field.
+        If none of the tiers are applicable, please choose "custom" and
+        specify your requirements (CPU/Memory/Storage) in the next field.
 
-              Please don't be afraid to choose a smaller tier first. If you
-              require a higher quota, we can easily upgrade your tier. Quotas
-              are here to prevent over-reservation (resource requests) not
-              actual usage.
-          options:
-              - X-Small
-              - Small
-              - Medium
-              - Large
-              - Custom
-      validations:
-          required: true
-    - type: textarea
-      id: custom-quota
-      attributes:
-          label: Custom quota
-          description: |
-              If you selected "custom" in previous step, please specify your desired quota here.
-          placeholder: 1CPU, 20GiB memory, 30GiB storage
-      validations:
-          required: false
-    - type: markdown
-      attributes:
-          value: |
-              ---
-              If you don't want to wait for the maintainers to notice this issue, you can make the changes yourself by submitting a pull request against the configuration repository. Please follow the [onboarding project](https://www.operate-first.cloud/apps/content/cluster-scope/onboarding_to_cluster.html) guide.
+        Please don't be afraid to choose a smaller tier first. If you
+        require a higher quota, we can easily upgrade your tier. Quotas
+        are here to prevent over-reservation (resource requests) not
+        actual usage.
+      options:
+        - X-Small
+        - Small
+        - Medium
+        - Large
+        - Custom
+    validations:
+      required: true
+  - type: textarea
+    id: custom-quota
+    attributes:
+      label: Custom quota
+      description: |
+        If you selected "custom" in previous step, please specify your desired quota here.
+      placeholder: 1CPU, 20GiB memory, 30GiB storage
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        If you don't want to wait for the maintainers to notice this issue, you can make the changes yourself by submitting a pull request against the configuration repository. Please follow the [onboarding project](https://www.operate-first.cloud/apps/content/cluster-scope/onboarding_to_cluster.html) guide.
