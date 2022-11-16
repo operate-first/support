@@ -12,19 +12,9 @@ body:
       description: |
         Please select a cluster.
       options:
-        - Infra
-        - Smaug
-        - Jerry
-  - type: dropdown
-    id: environment
-    attributes:
-      multiple: false
-      label: Target environment
-      description: |
-        Please select an environment.
-      options:
-        - moc
-        - emea
+        - MOC/Infra
+        - MOC/Smaug
+        - EMEA/Jerry
   - type: input
     id: team-name
     attributes:
